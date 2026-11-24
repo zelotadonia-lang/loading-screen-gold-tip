@@ -6,7 +6,14 @@ It knows. It is sorry. It will do it again.
 
 import os
 
+# Competition gate: the entry must fit the 200-character limit.
+MAX_CHARS = 200
+
 ENTRY = "Tip: the agent named the variable final_final_v2. It knows. It is sorry. It will do it again."
+
+# Enforce the competition gate on the final text itself.
+assert len(ENTRY) <= MAX_CHARS, f"entry must be <= {MAX_CHARS} chars, got {len(ENTRY)}"
+assert "\n" not in ENTRY, "entry must be a single line"
 
 
 def main() -> None:
